@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "429846015836",
+    "firebase_url": "https://eduv2-mobile-app.firebaseio.com",
+    "project_id": "eduv2-mobile-app",
+    "storage_bucket": "eduv2-mobile-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429846015836:android:c032db52dd7a9aa6b5db99",
+        "android_client_info": {
+          "package_name": "com.vtominator.edu2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429846015836-djtbnq22l748udva1do7acmmsqp46n4v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vtominator.edu2",
+            "certificate_hash": "4eb107320326ab6a38da211b765c6ce61e6d9fc3"
+          }
+        },
+        {
+          "client_id": "429846015836-n85c4tpv0eq66g6scb60s9lhcbdd31h1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV54dSUI19itLiTEcrlkxg-TOwOJpHzVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429846015836-n85c4tpv0eq66g6scb60s9lhcbdd31h1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

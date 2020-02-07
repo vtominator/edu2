@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:fitsSystemWindows="true"
+    tools:context=".View.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/felsoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <HorizontalScrollView
+                android:id="@+id/felsoPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenTanc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tTanc"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/tanc" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenZene"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tZene"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/zene" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenLatvany"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tLatvany"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/latvany" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenIrodalom"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/tIrodalom"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:background="@drawable/irodalom" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/alsoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/alsoPanel"
+            android:layout_below="@id/felsoLayout">
+
+            <HorizontalScrollView
+                android:id="@+id/kozepsoPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenKapcsolodj_ki"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="600dp">
+
+                            <Button
+                                android:id="@+id/tKapcsolodj_ki"
+                                android:layout_width="230dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/kapcsolodjki" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="50dp"
+                                android:elevation="10dp"
+                                android:fontFamily="@font/scpbold"
+                                android:text="@string/kapcsolodj_ki"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/imgSeenFun"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/item_notify"
+                            android:elevation="3dp"
+                            android:gravity="center"
+                            android:text="!"
+                            android:textColor="@color/yellow"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="600dp">
+
+                            <Button
+                                android:id="@+id/tFun"
+                                android:layout_width="220dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/fun" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="50dp"
+                                android:elevation="10dp"
+                                android:fontFamily="@font/scpbold"
+                                android:text="@string/fun"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/alsoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
+
+            <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+                android:id="@+id/alsoMenusor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_grey_border_top"
+                app:itemIconTint="@drawable/main_gomb_szin"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

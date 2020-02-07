@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">edu2</string>
+    <string name="facebook_app_id">2240598252923652</string>
+    <string name="fb_login_protocol_scheme">fb2240598252923652</string>
+
+    <string name="navigation_drawer_open">Nagigációs menü megnyitása</string>
+    <string name="navigation_drawer_close">Nagigációs menü bezárása</string>
+    <string name="search">Keresés</string>
+
+    <string name="felhasznalonev">Felhasználónév</string>
+    <string name="jelszo">Jelszó</string>
+    <string name="jelszo_megegyszer">Jelszó mégegyszer</string>
+    <string name="email">E-mail cím</string>
+    <string name="bejelentkezes">Bejelentkezés</string>
+
+    <string name="regisztracio">Regisztráció</string>
+    <string name="regisztracios_szoveg">Ha nincs még fiókod, jelentkezz be facebook vagy google használatával, vagy regisztrálj itt</string>
+    <string name="vendeg_szoveg">Böngészés bejelentkezés nélkül</string>
+
+
+    <string name="beallitasok">Beállítások</string>
+
+
+    <string name="tanc">Tánc</string>
+    <string name="zene">Zene</string>
+    <string name="latvany">Látvány</string>
+    <string name="irodalom">Irodalom</string>
+
+
+    <string name="fun">Fun!</string>
+    <string name="szorazkozas">Szórakozás</string>
+    <string name="erdeklodesek">Érdeklődések</string>
+    <string name="esemeny">Esemény</string>
+    <string name="lehetoseg">Lehetőség</string>
+
+    <string name="kapcsolodj_ki">Kapcsolódj ki!</string>
+    <string name="szulok">Szülők</string>
+    <string name="fiatalok">Fiatalok</string>
+    <string name="szakemberek">Szakemberek</string>
+
+    <string name="jelentkezz">Jelentkezz!</string>
+
+    <string name="ottleszek">Ott leszek</string>
+    <string name="erdekel">Érdekel</string>
+    <string name="tetszik">Tetszik</string>
+    <string name="ottlesz">Ott lesz: </string>
+    <string name="erdeklodok">Érdeklődők: </string>
+    <string name="kedvelok">Kedvelők: </string>
+
+
+    <string name="main_category">Főkategória</string>
+    <string name="side_category">Alkategória</string>
+    <string name="eventname">Esemény neve</string>
+    <string name="date">Nap kiválasztása</string>
+    <string name="time">Időpont kiválasztása</string>
+    <string name="picture">Kép kiválasztása</string>
+    <string name="description">Leírás</string>
+    <string name="location">Helyszín</string>
+    <string name="short_description">Rövid leírás</string>
+    <string name="link">Kérdőív link</string>
+    <string name="makebutton">Létrehozás</string>
+
+    <string-array name="type">
+        <item>Esemény</item>
+        <item>Jelentkezés</item>
+        <item>Kérdőív</item>
+    </string-array>
+    <string-array name="pdf_irodalom">
+        <item>versmondás</item>
+        <item>prózamondás</item>
+        <item>irodalmi színpad</item>
+        <item>önálló irodalmi alkotás</item>
+        <item>slam poetry</item>
+    </string-array>
+    <string-array name="pdf_zene">
+        <item>szólóének</item>
+        <item>énekkar - kamarakórus</item>
+        <item>népdal - hangszeres népzene</item>
+        <item>szólóhangszer - kamaraegyüttes</item>
+        <item>könnyűzenei együttes</item>
+    </string-array>
+    <string-array name="pdf_tanc">
+        <item>néptánc</item>
+        <item>tánc és mozgás</item>
+    </string-array>
+    <string-array name="pdf_latvany">
+        <item>képző- és iparművészet</item>
+        <item>film</item>
+        <item>fotó</item>
+    </string-array>
+    <string-array name="main_category">
+        <item>@string/tanc</item>
+        <item>@string/zene</item>
+        <item>@string/latvany</item>
+        <item>@string/irodalom</item>
+        <item>@string/fun</item>
+        <item>@string/kapcsolodj_ki</item>
+    </string-array>
+    <string-array name="side_category_fun">
+        <item>@string/szorazkozas</item>
+        <item>@string/esemeny</item>
+        <item>@string/lehetoseg</item>
+    </string-array>
+    <string-array name="side_category_kapcsolodj_ki">
+        <item>@string/szulok</item>
+        <item>@string/fiatalok</item>
+        <item>@string/szakemberek</item>
+    </string-array>
+</resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/grey"
+    tools:context=".View.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/cimSor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/scpbold"
+            android:text="@string/fun"
+            android:textAllCaps="true"
+            android:textSize="40sp" />
+
+        <HorizontalScrollView
+            android:id="@+id/hsvMenubarBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cimSor"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/imgSeenSzorakozas"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/item_notify"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:text="!"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/tSzorakozas"
+                        android:layout_width="230dp"
+                        android:layout_height="500dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/szorakozas" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="100dp"
+                        android:elevation="10dp"
+                        android:fontFamily="@font/scpbold"
+                        android:text="@string/szorazkozas"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/imgSeenEsemeny"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/item_notify"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:text="!"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/tEsemeny"
+                        android:layout_width="230dp"
+                        android:layout_height="500dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/esemeny" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="100dp"
+                        android:elevation="10dp"
+                        android:fontFamily="@font/scpbold"
+                        android:text="@string/esemeny"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/imgSeenLehetoseg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/item_notify"
+                        android:elevation="3dp"
+                        android:gravity="center"
+                        android:text="!"
+                        android:textColor="@color/yellow"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+
+                    <Button
+                        android:id="@+id/tLehetoseg"
+                        android:layout_width="220dp"
+                        android:layout_height="500dp"
+                        android:background="@drawable/lehetoseg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="100dp"
+                        android:elevation="10dp"
+                        android:fontFamily="@font/scpbold"
+                        android:text="@string/lehetoseg"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
+
+            <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+                android:id="@+id/alsoMenusor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_grey_border_top"
+                app:itemIconTint="@drawable/fun_gomb_szin"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

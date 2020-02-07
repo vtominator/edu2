@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".View.BeallitasokActivity">
+
+    <TextView
+        android:id="@+id/felsoPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/scpregular"
+        android:gravity="center"
+        android:text="@string/beallitasok"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/gradplus2" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_above="@id/alsoPanel"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/gradplus" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/profilMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profilKep"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tvNev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/profilKep"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/scpbold"
+                    android:text="Név"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNev"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/scpregular"
+                    android:text="E-mail"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/beallitasokMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profilMenu"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/Ertesites"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvErtesites"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/scpregular"
+                        android:text="Értesítés"
+                        android:textSize="18sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/kErtesites"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:checked="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Erdeklodesek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Ertesites"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvErdeklodesek"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/scpregular"
+                        android:text="Érdeklődések"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/elore_nyil" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Letrehozas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Erdeklodesek"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvLetrehozas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/scpregular"
+                        android:text="Létrehozás"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/elore_nyil" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Modositas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Letrehozas"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvModositas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/scpregular"
+                        android:text="Módosítás"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/elore_nyil" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/Kijelentkezes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Modositas"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:id="@+id/tvKijelentkezes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/scpregular"
+                        android:text="Kijelentkezés"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/elore_nyil" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/alsoPanel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true">
+
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:id="@+id/alsoMenusor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_grey_border_top"
+            app:itemIconTint="@drawable/beallitasok_gomb_szin"
+            app:menu="@menu/bottom_navigation_menu">
+
+        </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+
+    </RelativeLayout>
+</RelativeLayout>

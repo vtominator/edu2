@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sarga_kek_gradient"
+    tools:context=".View.BelepesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="80dp"
+                    android:src="@drawable/edu2_logo_without" />
+
+                <EditText
+                    android:id="@+id/etFelhasznalonev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logo"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/scpregular"
+                    android:hint="@string/felhasznalonev"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+                <EditText
+                    android:id="@+id/etJelszo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etFelhasznalonev"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/scpregular"
+                    android:hint="@string/jelszo"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
+
+
+                <Button
+                    android:id="@+id/bBelepes"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etJelszo"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/grey"
+                    android:fontFamily="@font/scpregular"
+                    android:text="@string/bejelentkezes"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/gombPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bBelepes"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginBottom="40dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:id="@+id/facebookFrame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="100dp">
+
+                        <com.facebook.login.widget.LoginButton
+                            android:id="@+id/bFacebook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/facebook_belepesgomb"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/facebook_gomb"
+                            android:text="f"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="45sp"
+                            android:textStyle="bold" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/googleFrame"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/facebookFrame"
+                        android:layout_toRightOf="@+id/facebookFrame">
+
+                        <com.google.android.gms.common.SignInButton
+                            android:id="@+id/bGoogle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/google_belepesgomb"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/google_gomb" />
+                    </FrameLayout>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvRegisztraciosSzoveg"
+                    android:layout_width="280dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gombPanel"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/scpregular"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tvVendegBelepes"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/tvRegisztraciosSzoveg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/scpregular"
+                    android:gravity="center"
+                    android:textSize="13sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

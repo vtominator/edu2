@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/felsoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ToolbarTheme"
+            app:contentInsetStartWithNavigation="0dp">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/keresoMenu"
+            android:layout_below="@id/felsoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingEnd="18dp"
+            android:paddingRight="18dp">
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/keresoMenu"
+            android:paddingBottom="20dp"
+            android:layout_above="@id/alsoPanel"
+            android:padding="4dp"
+            android:scrollbars="vertical">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/alsoPanel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true">
+
+            <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+                android:id="@+id/alsoMenusor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_grey_border_top"
+                app:itemIconTint="@drawable/main_gomb_szin"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
