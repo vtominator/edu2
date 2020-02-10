@@ -58,7 +58,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@mipmap/ic_launcher" />
+                    android:src="@drawable/batman" />
 
                 <TextView
                     android:id="@+id/tvNev"
