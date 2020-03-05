@@ -16,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -45,6 +46,8 @@ import java.text.Normalizer;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import hu.vtominator.edu2.R;
 import hu.vtominator.edu2.Model.Constants;
@@ -169,6 +172,8 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
                         Toast.makeText(mContext, jsonObject.getString("message"), Toast.LENGTH_LONG).show();
                         if (!jsonObject.getBoolean("error")) {
                             uploadPicture(EventName, getStringImage(bitmap));
+
+                            ujEsemenyJelzo(main_category, side_category);
                             if (MainActivity.ertesitesGomb){
                                 ertesitesKuldese();
                             }
@@ -198,6 +203,7 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
                     params.put("description", pdf);
 
                     return params;
+
                 }
             };
             RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -216,6 +222,9 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
                             ujEsemenyJelzo(main_category, side_category);
 
                             uploadPicture(EventName, getStringImage(bitmap));
+                            if (MainActivity.ertesitesGomb){
+                                ertesitesKuldese();
+                            }
                             startActivity(new Intent(mContext, MainActivity.class));
                             finish();
                         }
@@ -258,6 +267,9 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
 
                             ujEsemenyJelzo(main_category, side_category);
 
+                            if (MainActivity.ertesitesGomb){
+                                ertesitesKuldese();
+                            }
                             uploadPicture(EventName, getStringImage(bitmap));
                             startActivity(new Intent(mContext, MainActivity.class));
                             finish();
@@ -472,7 +484,6 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
 
     public void ertesitesKuldese() {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.URL_SEND_MULTIPLE_PUSH,
@@ -752,6 +763,9 @@ public class EsemenyHozzaadasActivity extends AppCompatActivity implements View.
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    @Override
+    public void onBackPressed() {}
 
 
 }

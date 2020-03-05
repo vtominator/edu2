@@ -230,10 +230,11 @@
             android:id="@+id/alsoMenusor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/white_grey_border_top"
-            app:itemIconTint="@drawable/beallitasok_gomb_szin"
+            android:layout_marginBottom="-12dp"
+            android:background="@color/grey"
+            app:itemBackground="@drawable/gomb_kivalasztott_hatter"
+            app:itemIconTint="@drawable/menugomb_szin"
             app:menu="@menu/bottom_navigation_menu">
-
         </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
     </RelativeLayout>

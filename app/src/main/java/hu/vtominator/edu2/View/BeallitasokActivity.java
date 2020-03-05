@@ -2,12 +2,7 @@ package hu.vtominator.edu2.View;
 
 import android.content.Context;
 import android.content.Intent;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.SwitchCompat;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,11 +40,14 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 import de.hdodenhof.circleimageview.CircleImageView;
-import hu.vtominator.edu2.R;
 import hu.vtominator.edu2.Controller.BottomNavigationViewHelper;
 import hu.vtominator.edu2.Model.Constants;
 import hu.vtominator.edu2.Model.SharedPrefManager;
+import hu.vtominator.edu2.R;
 
 public class BeallitasokActivity extends AppCompatActivity implements View.OnClickListener {
     private Context mContext = BeallitasokActivity.this;
@@ -58,9 +56,6 @@ public class BeallitasokActivity extends AppCompatActivity implements View.OnCli
     private static boolean VENDEG_FELHASZNALO = false;
     private static boolean ADMIN_FELHASZNALO = false;
 
-    private static final String TAG = "BeallitasokActivity";
-
-    
     private GoogleSignInClient mGoogleSignInClient;
 
     private CircleImageView jelenlegiProfilKep;
@@ -75,8 +70,6 @@ public class BeallitasokActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_beallitasok);
-
-
 
 
         if (SharedPrefManager.getInstance(mContext).getUsername() == null) {
@@ -101,7 +94,7 @@ public class BeallitasokActivity extends AppCompatActivity implements View.OnCli
         tvEmail = findViewById(R.id.tvEmail);
 
         kErtesites = findViewById(R.id.kErtesites);
-        if (MainActivity.ertesitesGomb){
+        if (MainActivity.ertesitesGomb) {
             kErtesites.setChecked(true);
         } else {
             kErtesites.setChecked(false);
@@ -315,6 +308,7 @@ public class BeallitasokActivity extends AppCompatActivity implements View.OnCli
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void deleteNotification() {
         final String user_id = SharedPrefManager.getInstance(mContext).getUserId();
 
@@ -348,12 +342,14 @@ public class BeallitasokActivity extends AppCompatActivity implements View.OnCli
         requestQueue.add(stringRequest);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
             case (R.id.Erdeklodesek):
                 startActivity(new Intent(mContext, ErdeklodesekActivity.class));
                 finish();

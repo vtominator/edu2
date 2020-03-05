@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -121,7 +122,8 @@ public class RegisztracioActivity extends AppCompatActivity implements View.OnCl
         progressDialog.show();
 
 
-        final String Token = MyFirebaseMessagingService.getToken(getApplicationContext());
+        //final String Token = MyFirebaseMessagingService.getToken(getApplicationContext());
+        String Token = FirebaseInstanceId.getInstance().getToken();
         final String Email = email;
 
         if (Token == null) {
@@ -194,4 +196,7 @@ public class RegisztracioActivity extends AppCompatActivity implements View.OnCl
                 break;
         }
     }
+
+    @Override
+    public void onBackPressed() {}
 }

@@ -66,7 +66,7 @@ public class BelepesActivity extends AppCompatActivity implements View.OnClickLi
     private CallbackManager callbackManager;
 
     private SignInButton bGoogle;
-    private ImageView google_belepesgomb;
+    private Button google_belepesgomb;
     private GoogleSignInClient mGoogleSignInClient;
 
     private ProgressDialog progressDialog;
@@ -136,7 +136,8 @@ public class BelepesActivity extends AppCompatActivity implements View.OnClickLi
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setUnderlineText(true);
-                ds.setColor(Color.WHITE);
+                ds.setFakeBoldText(true);
+                ds.setColor(Color.BLACK);
             }
         };
         regisztracios_szoveg.setSpan(clickableSpan, 76, 91, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -159,7 +160,8 @@ public class BelepesActivity extends AppCompatActivity implements View.OnClickLi
             public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setUnderlineText(true);
-                ds.setColor(Color.WHITE);
+                ds.setFakeBoldText(true);
+                ds.setColor(Color.BLACK);
             }
         };
         vendeg_szoveg.setSpan(clickableSpan, 0, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -270,6 +272,8 @@ public class BelepesActivity extends AppCompatActivity implements View.OnClickLi
         finish();
     }
 
+    @Override
+    public void onBackPressed() {}
 
     @Override
     public void onClick(View v) {

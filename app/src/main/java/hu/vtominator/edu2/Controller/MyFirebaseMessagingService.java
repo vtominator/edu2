@@ -11,16 +11,17 @@ import android.os.Build;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
-import hu.vtominator.edu2.View.MainActivity;
 import hu.vtominator.edu2.R;
+import hu.vtominator.edu2.View.MainActivity;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMessagingServ";
@@ -54,7 +55,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), channel_id).setSmallIcon(R.mipmap.ic_launcher).setSound(uri).setAutoCancel(true).setVibrate(new long[]{1000, 1000, 1000, 1000, 1000}).setOnlyAlertOnce(true).setContentIntent(pendingIntent);
-        if (Build.VERSION.SDK_INT >=Build.VERSION_CODES.JELLY_BEAN){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             builder = builder.setContent(getCustomDesign(title, message));
         } else {
             builder = builder.setContentTitle(title).setContentText(message).setSmallIcon(R.mipmap.ic_launcher);
@@ -77,8 +78,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         getSharedPreferences("SHARED_PREF", MODE_PRIVATE).edit().putString("regId", s).apply();
     }
 
-    public static String getToken(Context context){
-        return context.getSharedPreferences("SHARED_PREF", MODE_PRIVATE).getString("regId","empty");
+    public static String getToken(Context context) {
+       return context.getSharedPreferences("SHARED_PREF", MODE_PRIVATE).getString("regId","empty");
     }
 
 //    @Override

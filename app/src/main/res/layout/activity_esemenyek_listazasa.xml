@@ -3,6 +3,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey">
@@ -23,9 +24,9 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/keresoMenu"
-            android:layout_below="@id/felsoPanel"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_below="@id/felsoPanel"
             android:paddingEnd="18dp"
             android:paddingRight="18dp">
 
@@ -36,11 +37,12 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/keresoMenu"
-            android:paddingBottom="20dp"
             android:layout_above="@id/alsoPanel"
+            android:layout_below="@id/keresoMenu"
             android:padding="4dp"
-            android:scrollbars="vertical">
+            android:paddingBottom="20dp"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/card_home_list_event">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -54,11 +56,11 @@
                 android:id="@+id/alsoMenusor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/white_grey_border_top"
-                app:itemIconTint="@drawable/main_gomb_szin"
-                app:menu="@menu/bottom_navigation_menu">
-
-            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+                android:layout_marginBottom="-12dp"
+                android:background="@color/grey"
+                app:itemBackground="@drawable/gomb_kivalasztott_hatter"
+                app:itemIconTint="@drawable/menugomb_szin"
+                app:menu="@menu/bottom_navigation_menu"></com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
         </RelativeLayout>
 

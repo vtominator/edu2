@@ -53,9 +53,10 @@
                             android:id="@+id/tTanc"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/tanc" />
+                            android:background="@drawable/tanc"/>
 
                     </RelativeLayout>
 
@@ -79,6 +80,8 @@
                             android:id="@+id/tZene"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/zene" />
@@ -105,6 +108,8 @@
                             android:id="@+id/tLatvany"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/latvany" />
@@ -130,6 +135,9 @@
                             android:id="@+id/tIrodalom"
                             android:layout_width="110dp"
                             android:layout_height="110dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
                             android:background="@drawable/irodalom" />
 
                     </RelativeLayout>
@@ -153,7 +161,6 @@
                 android:layout_centerInParent="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -182,12 +189,14 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="600dp">
+                            android:layout_height="match_parent">
 
                             <Button
                                 android:id="@+id/tKapcsolodj_ki"
                                 android:layout_width="230dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginRight="10dp"
                                 android:background="@drawable/kapcsolodjki" />
@@ -227,12 +236,15 @@
 
                         <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="600dp">
+                            android:layout_height="match_parent">
 
                             <Button
                                 android:id="@+id/tFun"
                                 android:layout_width="220dp"
                                 android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
                                 android:background="@drawable/fun" />
 
                             <TextView
@@ -268,10 +280,11 @@
                 android:id="@+id/alsoMenusor"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/white_grey_border_top"
-                app:itemIconTint="@drawable/main_gomb_szin"
+                android:layout_marginBottom="-12dp"
+                android:background="@color/grey"
+                app:itemBackground="@drawable/gomb_kivalasztott_hatter"
+                app:itemIconTint="@drawable/menugomb_szin"
                 app:menu="@menu/bottom_navigation_menu">
-
             </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
         </RelativeLayout>

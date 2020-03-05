@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kek_sarga_gradient"
     tools:context=".View.BelepesActivity">
 
     <TextView
@@ -13,90 +11,82 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="80dp"
+        android:background="@color/yellow"
         android:fontFamily="@font/scpregular"
         android:gravity="center"
         android:text="@string/regisztracio"
         android:textAllCaps="true"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
 
     <ScrollView
+        android:layout_centerVertical="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/felsoPanel"
-        android:layout_centerInParent="true">
+        android:layout_below="@id/felsoPanel">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
 
 
-            <RelativeLayout
+            <EditText
+                android:id="@+id/etFelhasznalonev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp">
+                android:layout_marginBottom="30dp"
+                android:background="@color/grey"
+                android:fontFamily="@font/scpregular"
+                android:hint="@string/felhasznalonev"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_grey" />
 
+            <EditText
+                android:id="@+id/etJelszo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etFelhasznalonev"
+                android:layout_marginBottom="30dp"
+                android:background="@color/grey"
+                android:fontFamily="@font/scpregular"
+                android:hint="@string/jelszo"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_grey" />
 
-                <EditText
-                    android:id="@+id/etFelhasznalonev"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/scpregular"
-                    android:hint="@string/felhasznalonev"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white" />
+            <EditText
+                android:id="@+id/etJelszoMegegyszer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etJelszo"
+                android:layout_marginBottom="30dp"
+                android:background="@color/grey"
+                android:fontFamily="@font/scpregular"
+                android:hint="@string/jelszo_megegyszer"
+                android:inputType="textPassword"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_grey" />
 
-                <EditText
-                    android:id="@+id/etJelszo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etFelhasznalonev"
-                    android:layout_marginBottom="30dp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/scpregular"
-                    android:hint="@string/jelszo"
-                    android:inputType="textPassword"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white" />
-
-                <EditText
-                    android:id="@+id/etJelszoMegegyszer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etJelszo"
-                    android:layout_marginBottom="30dp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/scpregular"
-                    android:hint="@string/jelszo_megegyszer"
-                    android:inputType="textPassword"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white" />
-
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/etJelszoMegegyszer"
-                    android:layout_marginBottom="80dp"
-                    android:backgroundTint="@color/white"
-                    android:fontFamily="@font/scpregular"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white" />
-
-            </RelativeLayout>
-
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etJelszoMegegyszer"
+                android:layout_marginBottom="80dp"
+                android:background="@color/grey"
+                android:fontFamily="@font/scpregular"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/dark_grey" />
 
         </RelativeLayout>
 
@@ -110,10 +100,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:background="@color/grey"
+        android:background="@drawable/gomb_hatter"
         android:fontFamily="@font/scpregular"
         android:text="@string/regisztracio"
-        android:textColor="@color/dark_grey"
+        android:textColor="@drawable/gomb_szoveg"
         android:textSize="16sp" />
 
 </RelativeLayout>

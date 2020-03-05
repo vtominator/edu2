@@ -67,7 +67,9 @@ public class KapcsolodjKiActivity extends AppCompatActivity {
         tSzulok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.szulok);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -77,7 +79,9 @@ public class KapcsolodjKiActivity extends AppCompatActivity {
         tFiatalok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.fiatalok);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -87,6 +91,9 @@ public class KapcsolodjKiActivity extends AppCompatActivity {
         tSzakemberek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.szakemberek);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -213,4 +220,6 @@ public class KapcsolodjKiActivity extends AppCompatActivity {
         menuItem.setChecked(true);
     }
 
+    @Override
+    public void onBackPressed() {}
 }

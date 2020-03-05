@@ -2,12 +2,12 @@ package hu.vtominator.edu2.View;
 
 import android.content.Intent;
 import android.net.Uri;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import hu.vtominator.edu2.R;
+import androidx.appcompat.app.AppCompatActivity;
 import hu.vtominator.edu2.Model.Event;
+import hu.vtominator.edu2.R;
 
 import static hu.vtominator.edu2.View.EsemenyekListazasa.eventList;
 
@@ -29,9 +29,10 @@ public class KerdoivActivity extends AppCompatActivity {
         startActivity(intent);
 
         supportFinishAfterTransition();
-
-
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 
 }

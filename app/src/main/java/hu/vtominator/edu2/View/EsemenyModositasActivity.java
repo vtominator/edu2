@@ -507,5 +507,8 @@ public class EsemenyModositasActivity extends AppCompatActivity implements View.
 
     }
 
+    @Override
+    public void onBackPressed() {}
+
 
 }

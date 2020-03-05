@@ -148,8 +148,6 @@
             android:id="@+id/bOttleszek"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/etJelszo"
-            android:layout_centerHorizontal="true"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/gomb_nem_lenyomott"
@@ -164,8 +162,6 @@
             android:id="@+id/bErdekel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/etJelszo"
-            android:layout_centerHorizontal="true"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/gomb_nem_lenyomott"
@@ -180,8 +176,6 @@
             android:id="@+id/bTetszik"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/etJelszo"
-            android:layout_centerHorizontal="true"
             android:layout_weight="1"
             android:background="@drawable/gomb_nem_lenyomott"
             android:elevation="4dp"
@@ -202,11 +196,11 @@
             android:id="@+id/alsoMenusor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/white_grey_border_top"
-            app:itemIconTint="@drawable/main_gomb_szin"
-            app:menu="@menu/bottom_navigation_menu">
-
-        </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
+            android:layout_marginBottom="-12dp"
+            android:background="@color/grey"
+            app:itemBackground="@drawable/gomb_kivalasztott_hatter"
+            app:itemIconTint="@drawable/menugomb_szin"
+            app:menu="@menu/bottom_navigation_menu"></com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
     </RelativeLayout>
 </RelativeLayout>

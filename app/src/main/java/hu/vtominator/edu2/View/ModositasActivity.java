@@ -224,4 +224,7 @@ public class ModositasActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
     }
+
+    @Override
+    public void onBackPressed() {}
 }

@@ -15,7 +15,6 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/lvEvents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -211,7 +210,7 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/scpregular"
-                                android:text="@string/erdeklodok" />
+                                android:text="@string/erdeklodo" />
 
                             <TextView
                                 android:id="@+id/tvErdeklodo"
@@ -235,7 +234,7 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_marginBottom="10dp"
                                 android:fontFamily="@font/scpregular"
-                                android:text="@string/kedvelok" />
+                                android:text="@string/kedveles" />
 
                             <TextView
                                 android:id="@+id/tvKedveles"
@@ -265,6 +264,6 @@
             android:text="!"
             android:textColor="@color/yellow"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </RelativeLayout>
 </RelativeLayout>

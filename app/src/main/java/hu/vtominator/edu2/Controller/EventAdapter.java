@@ -2,9 +2,6 @@ package hu.vtominator.edu2.Controller;
 
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +22,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.squareup.picasso.Picasso;
 
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,11 +32,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import hu.vtominator.edu2.Model.Constants;
 import hu.vtominator.edu2.Model.Event;
 import hu.vtominator.edu2.Model.SharedPrefManager;
-import hu.vtominator.edu2.View.EsemenyekListazasa;
 import hu.vtominator.edu2.R;
+import hu.vtominator.edu2.View.EsemenyekListazasa;
 
 import static android.view.View.GONE;
 

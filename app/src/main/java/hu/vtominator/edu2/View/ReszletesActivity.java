@@ -4,11 +4,8 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.appcompat.widget.Toolbar;
-
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,11 +34,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import hu.vtominator.edu2.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import hu.vtominator.edu2.Controller.BottomNavigationViewHelper;
 import hu.vtominator.edu2.Model.Constants;
 import hu.vtominator.edu2.Model.Event;
 import hu.vtominator.edu2.Model.SharedPrefManager;
+import hu.vtominator.edu2.R;
 
 import static hu.vtominator.edu2.View.EsemenyekListazasa.eventList;
 
@@ -56,7 +55,7 @@ public class ReszletesActivity extends AppCompatActivity {
 
     private int position;
     private ImageView kepHelye;
-    private TextView esemenyNeve,esemenyLeirasa, esemenyHelye, rovidLeiras, esemenyDatuma, esemenyIdeje;
+    private TextView esemenyNeve, esemenyLeirasa, esemenyHelye, rovidLeiras, esemenyDatuma, esemenyIdeje;
     private String nev, hely, datum, ido, rovid_leiras, leiras, kep;
     private Button bOttleszek, bErdekel, bTetszik;
 
@@ -121,11 +120,11 @@ public class ReszletesActivity extends AppCompatActivity {
         menuItem.setChecked(true);
     }
 
-    private void sajatListaEsemenyeinekBetoltese(){
+    private void sajatListaEsemenyeinekBetoltese() {
         Bundle extras = getIntent().getExtras();
 
         position = extras.getInt("position");
-        if (!(ErdeklodesekActivity.myEventsList.isEmpty())){
+        if (!(ErdeklodesekActivity.myEventsList.isEmpty())) {
             final Event currentEvent = ErdeklodesekActivity.myEventsList.get(position);
 
 
@@ -173,7 +172,8 @@ public class ReszletesActivity extends AppCompatActivity {
             tetszikGombAllapota(currentEvent);
         }
     }
-    private void esemenyinformaciokBetoltese(){
+
+    private void esemenyinformaciokBetoltese() {
         Bundle extras = getIntent().getExtras();
 
         position = extras.getInt("position");
@@ -198,27 +198,29 @@ public class ReszletesActivity extends AppCompatActivity {
         esemenyLeirasa.setText(leiras);
 
 
-        bOttleszek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!currentEvent.isParticipate()) addParticipate(currentEvent);
-                else deleteParticipate(currentEvent);
-            }
-        });
-        bErdekel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!currentEvent.isInterest()) addInterest(currentEvent);
-                else deleteInterest(currentEvent);
-            }
-        });
-        bTetszik.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!currentEvent.isFavorite()) addFavorite(currentEvent);
-                else deleteFavorite(currentEvent);
-            }
-        });
+        if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+            bOttleszek.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!currentEvent.isParticipate()) addParticipate(currentEvent);
+                    else deleteParticipate(currentEvent);
+                }
+            });
+            bErdekel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!currentEvent.isInterest()) addInterest(currentEvent);
+                    else deleteInterest(currentEvent);
+                }
+            });
+            bTetszik.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!currentEvent.isFavorite()) addFavorite(currentEvent);
+                    else deleteFavorite(currentEvent);
+                }
+            });
+        }
 
         ottleszekGombAllapota(currentEvent);
         erdekelGombAllapota(currentEvent);
@@ -265,6 +267,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void addInterest(final Event currentEvent) {
 
         final String user_id = SharedPrefManager.getInstance(mContext).getUserId();
@@ -306,6 +309,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void addFavorite(final Event currentEvent) {
 
         final String user_id = SharedPrefManager.getInstance(mContext).getUserId();
@@ -389,6 +393,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void deleteInterest(final Event currentEvent) {
         final String user_id = SharedPrefManager.getInstance(mContext).getUserId();
         final int event_id = currentEvent.getEvent_id();
@@ -428,6 +433,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void deleteFavorite(final Event currentEvent) {
         final String user_id = SharedPrefManager.getInstance(mContext).getUserId();
         final int event_id = currentEvent.getEvent_id();
@@ -490,6 +496,7 @@ public class ReszletesActivity extends AppCompatActivity {
                             String user_id = favObj.getString("user_id");
                             int event_id = favObj.getInt("event_id");
 
+                            Log.d(TAG, "asd "+currentUserId);
 
                             if (currentUserId == null) {
                                 if (account == null) {
@@ -501,7 +508,7 @@ public class ReszletesActivity extends AppCompatActivity {
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                         bOttleszek.setBackground(getResources().getDrawable(R.drawable.gomb_lenyomott));
                                     }
-                                    bOttleszek.setTextColor(getResources().getColor(R.color.white));
+                                    bOttleszek.setTextColor(getResources().getColor(R.color.yellow));
 
                                     currentEvent.setParticipate(true);
                                     return;
@@ -535,6 +542,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void erdekelGombAllapota(final Event currentEvent) {
 
         final String currentUserId = SharedPrefManager.getInstance(mContext).getUserId();
@@ -602,6 +610,7 @@ public class ReszletesActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void tetszikGombAllapota(final Event currentEvent) {
 
         final String currentUserId = SharedPrefManager.getInstance(mContext).getUserId();
@@ -668,5 +677,10 @@ public class ReszletesActivity extends AppCompatActivity {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

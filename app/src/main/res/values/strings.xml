@@ -44,8 +44,8 @@
     <string name="erdekel">Érdekel</string>
     <string name="tetszik">Tetszik</string>
     <string name="ottlesz">Ott lesz: </string>
-    <string name="erdeklodok">Érdeklődők: </string>
-    <string name="kedvelok">Kedvelők: </string>
+    <string name="erdeklodo">Érdeklődő: </string>
+    <string name="kedveles">Kedvelés: </string>
 
 
     <string name="main_category">Főkategória</string>

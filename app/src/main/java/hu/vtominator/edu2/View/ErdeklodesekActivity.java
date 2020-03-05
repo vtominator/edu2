@@ -264,5 +264,8 @@ public class ErdeklodesekActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(stringRequest);
     }
 
+    @Override
+    public void onBackPressed() {}
+
 
 }

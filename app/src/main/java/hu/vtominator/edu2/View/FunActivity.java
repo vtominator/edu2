@@ -3,7 +3,6 @@ package hu.vtominator.edu2.View;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,10 +29,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import hu.vtominator.edu2.R;
+import androidx.appcompat.app.AppCompatActivity;
 import hu.vtominator.edu2.Controller.BottomNavigationViewHelper;
 import hu.vtominator.edu2.Model.Constants;
 import hu.vtominator.edu2.Model.SharedPrefManager;
+import hu.vtominator.edu2.R;
 
 
 public class FunActivity extends AppCompatActivity {
@@ -67,7 +67,9 @@ public class FunActivity extends AppCompatActivity {
         tSzorakozas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.szorazkozas);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -77,7 +79,9 @@ public class FunActivity extends AppCompatActivity {
         tEsemeny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.esemeny);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -87,7 +91,9 @@ public class FunActivity extends AppCompatActivity {
         tLehetoseg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.lehetoseg);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.black);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -130,6 +136,7 @@ public class FunActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
+
     private void getSeenCsempe(View csempe) {
 
 
@@ -181,8 +188,9 @@ public class FunActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
-    private void csempeLatott(String csempe){
-        switch (csempe){
+
+    private void csempeLatott(String csempe) {
+        switch (csempe) {
             case "tSzorakozas":
                 imgSeenSzorakozas.setVisibility(View.GONE);
                 break;
@@ -212,6 +220,10 @@ public class FunActivity extends AppCompatActivity {
         Menu menu = bottomNavigationViewEx.getMenu();
         MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
         menuItem.setChecked(true);
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 
 }

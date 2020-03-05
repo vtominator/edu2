@@ -2,9 +2,6 @@ package hu.vtominator.edu2.View;
 
 import android.content.Context;
 import android.content.Intent;
-
-import androidx.core.app.NotificationManagerCompat;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,10 +29,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import hu.vtominator.edu2.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
 import hu.vtominator.edu2.Controller.BottomNavigationViewHelper;
 import hu.vtominator.edu2.Model.Constants;
 import hu.vtominator.edu2.Model.SharedPrefManager;
+import hu.vtominator.edu2.R;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -92,26 +91,27 @@ public class MainActivity extends AppCompatActivity {
 
         ujdonsagEllenorzo();
         ertesitesAllapota();
-
     }
-
 
 
     private void felsoCsempeGombok() {
         tTanc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.tanc);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.tanc);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
-
             }
         });
         tZene.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.zene);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.zene);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -120,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
         tLatvany.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.latvany);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.latvany);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -129,7 +131,9 @@ public class MainActivity extends AppCompatActivity {
         tIrodalom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 EsemenyekListazasa.KATEGORIA_NEVE = getString(R.string.irodalom);
                 EsemenyekListazasa.KATEGORIA_SZINE = getResources().getColor(R.color.irodalom);
                 startActivity(new Intent(mContext, EsemenyekListazasa.class));
@@ -142,7 +146,9 @@ public class MainActivity extends AppCompatActivity {
         tKapcsolodj_ki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 startActivity(new Intent(mContext, KapcsolodjKiActivity.class));
                 finish();
             }
@@ -150,13 +156,14 @@ public class MainActivity extends AppCompatActivity {
         tFun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addSeenCsempe(v);
+                if (!SharedPrefManager.getInstance(mContext).getUsername().equals("Vendég")) {
+                    addSeenCsempe(v);
+                }
                 startActivity(new Intent(mContext, FunActivity.class));
                 finish();
             }
         });
     }
-
 
 
     private void addSeenCsempe(View csempe) {
@@ -193,13 +200,12 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
-    private void getSeenCsempe(final View csempe) {
 
+    private void getSeenCsempe(final View csempe) {
 
         final String currentUserId = SharedPrefManager.getInstance(mContext).getUserId();
         final String currentCsempeNeve = getResources().getResourceEntryName(csempe.getId());
         final GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(mContext);
-
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, Constants.URL_GETSEEN_CSEMPE, new Response.Listener<String>() {
             @Override
@@ -243,8 +249,9 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(mContext);
         requestQueue.add(stringRequest);
     }
-    private void csempeLatott(String csempe){
-        switch (csempe){
+
+    private void csempeLatott(String csempe) {
+        switch (csempe) {
             case "tZene":
                 imgSeenZene.setVisibility(View.GONE);
                 break;
@@ -267,6 +274,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
     private void ujdonsagEllenorzo() {
         getSeenCsempe(tTanc);
         getSeenCsempe(tZene);
@@ -276,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
         getSeenCsempe(tKapcsolodj_ki);
         getSeenCsempe(tFun);
     }
+
     private void ertesitesAllapota() {
 
         final String currentUserId = SharedPrefManager.getInstance(mContext).getUserId();
@@ -303,7 +312,6 @@ public class MainActivity extends AppCompatActivity {
                             } else if (currentUserId.equals(user_id)) {
                                 ertesitesGomb = true;
                             }
-
                         }
                     } else {
 
@@ -323,7 +331,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void alsoNavigaciosMenusor() {
         //Navigációs menü animációjának módosítása
         BottomNavigationViewHelper.setupBottomNavigationView(alsoNavigaciosMenu);
@@ -338,6 +345,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+    }
 
 }
